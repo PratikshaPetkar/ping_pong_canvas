@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="canvas_div">
+      <canvas id="myCanvas" style="border: 1px solid white"></canvas>
+    </div>
+    <!-- canvas is a element in html used to draw graphics on webpage like rectnagular box and it does not have border by default thats why gave attributes like ht,width and border radius-->
+    <!-- but to draw graphics js is must -->
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      // // script tag used for js and with getElementById get id
+      const context = canvas.getContext("2d");
+      // here we are working with 2d so used getContext method
+      const width = 400;
+      const height = 600;
+    
+      //paddle 
+      let paddleWidth = 50;
+      let paddleHeight = 10;
+
+      // to create container
+      canvas.width = width; // for canvas selected and stored in const
+      canvas.height = height; // coz of this it got fixed so we can use further only var
+
+      //   create reactangle
+      context.fillStyle = "black";
+      context.fillRect(0, 0, width, height);
+    
+        //create paddle top 
+        context.fillStyle = "white";
+        context.fillRect(175,10,paddleWidth,paddleHeight);
+
+         //create paddle bottom
+         context.fillStyle = "white";
+        context.fillRect(250,10,paddleWidth,paddleHeight);
+        // 400-50 = 350/2 = 175
+
+
+      // context.moveTo(0,0);
+      // //coordinates of x and y are 0,0;
+      // context.lineTo(200,200);
+      // // for diagonal line but it wont show on webpage.
+      // context.stroke();
+      // //it will show diagonal line on o/p
+    </script>
+  </body>
+</html>
